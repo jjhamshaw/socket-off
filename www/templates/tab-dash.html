@@ -1,0 +1,13 @@
+<ion-view view-title="Home">
+  <ion-content class="padding">
+
+    <div class="row" ng-repeat="switch in switches">
+      <div class="col">
+        <button class="button button-large button-block button-balanced" ng-click="switchOn(switch)">{{switch.name}}</button>
+      </div>
+      <div class="col">
+        <button class="button button-large button-block button-assertive" ng-click="switchOff(switch)">{{switch.name}}</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
