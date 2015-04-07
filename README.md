@@ -9,7 +9,9 @@ start the server...
 $ npm start
 ```
 
-and access it at http://localhost:3000/
+and access it at 
+
+http://localhost:3000/
 
 start the client in a browser...
 
