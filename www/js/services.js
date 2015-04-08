@@ -16,7 +16,7 @@ angular.module('starter.services', [])
   }
 })
 
-.service('SocketsSvc', function($http) {
+.service('SocketsSvc', function($http, apiUrl) {
   var states = { on: 1, off: 0 };
 
   // public API
@@ -26,7 +26,7 @@ angular.module('starter.services', [])
   };
 
   function turnOn (socketId) {
-    $http.put('http://localhost:3000/sockets/' + socketId, { state: states.on }).
+    $http.put(apiUrl + '/sockets/' + socketId, { state: states.on }).
       success(function(data, status, headers, config) {
         console.log(data);
       }).
@@ -36,7 +36,7 @@ angular.module('starter.services', [])
   }
 
   function turnOff (socketId) {
-    $http.put('http://localhost:3000/sockets/' + socketId, { state: states.off }).
+    $http.put(apiUrl + '/sockets/' + socketId, { state: states.off }).
       success(function(data, status, headers, config) {
         console.log(data);
       }).
