@@ -16,6 +16,36 @@ angular.module('starter.services', [])
   }
 })
 
+.service('SocketsSvc', function($http) {
+  var states = { on: 1, off: 0 };
+
+  // public API
+  return {
+    turnOn: turnOn,
+    turnOff: turnOff
+  };
+
+  function turnOn (socketId) {
+    $http.put('http://localhost:3000/sockets/' + socketId, { state: states.on }).
+      success(function(data, status, headers, config) {
+        console.log(data);
+      }).
+      error(function(data, status, headers, config) {
+        console.log(data);
+      });
+  }
+
+  function turnOff (socketId) {
+    $http.put('http://localhost:3000/sockets/' + socketId, { state: states.off }).
+      success(function(data, status, headers, config) {
+        console.log(data);
+      }).
+      error(function(data, status, headers, config) {
+        console.log(data);
+      });
+  }
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

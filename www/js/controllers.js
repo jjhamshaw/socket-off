@@ -1,15 +1,17 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Switches) {
+.controller('DashCtrl', function($scope, Switches, SocketsSvc) {
   
   $scope.switches = Switches.all();
   
   $scope.switchOn = function (switchItem) {
     console.log('switch ' + switchItem.name + ' on');
+    SocketsSvc.turnOn(switchItem.id);
   };
 
   $scope.switchOff = function (switchItem) {
     console.log('switch ' + switchItem.name + ' off');
+    SocketsSvc.turnOff(switchItem.id);
   };
 })
 
