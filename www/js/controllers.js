@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Switches, SocketsSvc) {
+.controller('RemoteCtrl', function($scope, Switches, SocketsSvc) {
   
   $scope.switches = Switches.all();
   
